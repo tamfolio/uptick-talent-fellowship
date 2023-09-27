@@ -1,3 +1,7 @@
+import { createRequire } from 'module';
+
+const require = createRequire(import.meta.url);
+
 /*eslint-env node*//**
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -13,4 +17,4 @@ export default {
     },
   },
   plugins: [],
-}
+};

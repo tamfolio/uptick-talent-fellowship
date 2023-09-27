@@ -1,4 +1,3 @@
-
 import { createSlice } from '@reduxjs/toolkit';
 
 const todoSlice = createSlice({
@@ -9,10 +8,12 @@ const todoSlice = createSlice({
       state.push(action.payload);
     },
     updateTodo: (state, action) => {
-      const { id, text } = action.payload;
+      const { id, title, description, status } = action.payload;
       const todoToUpdate = state.find(todo => todo.id === id);
       if (todoToUpdate) {
-        todoToUpdate.text = text;
+        todoToUpdate.title = title;
+        todoToUpdate.description = description;
+        todoToUpdate.status = status;
       }
     },
     deleteTodo: (state, action) => {
